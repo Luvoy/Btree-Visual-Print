@@ -52,9 +52,12 @@ typedef struct node
 #include "btree_visual_print_macro.h"
 
 BTree t1;
+
 /* add some contents to t1 */
+
 BTREE_VISUAL_PRINT(BTree, t1, lchild, rchild, data, "%c", stdout);
-/* where %c is the format str of then element in each node */
+
+/* where %c is the format str of the element in each node */
 ```
 
 ### For function:
@@ -74,14 +77,18 @@ typedef struct node
 #include "btree_visual_print.h"
 
 BTree t1;
+
 /* add some contents to t1 */
+
 btree_visual_print(t, "%d", stdout);
-/* where %d is the format str of then element in each node */
+
+/* where %d is the format str of the element in each node */
 
 ```
 ### Other things
-- 支持```char```、```int```、```char*```等基本类型 Supported are: ```char```、```int```、```char*```, among other basic types
+- 支持```char```、```int```、```char*```、```double```等基本类型 Supported types are: ```char```, ```int```, ```char*```, ```double```, among other basic types
 - 其他类型（如指针、结构体）可能要修改两行代码，已用TODO标出 For other types such as ptr or struct, two lines of code should be altered, which are marked as TODO in the code
+- 单个元素的字符长度最长为128，可以修改 The max length of the str of each element is 128, which can be modified
 
 ## Theory
 - 中序遍历计算横坐标 In-order to calculate the horizontal coordinate
